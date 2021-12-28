@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Show figurine notation</title>
+    <script src="/lib/pgnv.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="chessicons.css">
+</head>
+<body class='merida zeit'>
+<h3>Show figurine notation</h3>
+
+From the left: Alpha, Merida, Berlin, NotoSans fonts, CA Chess fonts.
+<br/>
+<h2>Show pieceStyle alpha (included)</h2>
+<div id="board1" style="width: 300px; float: left; margin-right: 50px"></div>
+
+<h2>Show pieceStyle chessicons (added)</h2>
+<div id="board2" style="width: 300px"></div>
+
+<h2>Steps</h2>
+Steps to do that:
+
+<ol>
+    <li>Get the icons from somewhere or create them themselves. The example is taken from https://github.com/pychess/pychess.</li>
+    <li>Add appropriate CSS to your HTML page (here the CSS is contained in <kbd>chessicons.css</kbd>).</li>
+    <li>Use the parameter <kbd>pieceStyle</kbd> to add your customized piece set to the viewer. Spelling should be the same as the class added by your CSS.</li>
+</ol>
+<script>
+    let pgnView = PGNV.pgnView;
+    let pgn = "1. e4! e5? 2. Nf3$3 Nc6$4 3. Bb5$5 a6$6 4. Ba4$7 Nf6$8 5. O-O$9 b5$10 6. Re1 Be7 Qe2 O-O Kh1";
+    pgnView("board1", {pgn: pgn, pieceStyle: "alpha"});
+    pgnView("board2", {pgn: pgn, pieceStyle: "chessicons"});
+</script>
+
+</body>
+</html>
